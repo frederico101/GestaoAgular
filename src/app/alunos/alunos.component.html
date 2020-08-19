@@ -1,5 +1,27 @@
-<h1>{{title}}</h1>
-<ul>
-    <li *ngFor="let aluno of alunos"> {{aluno}}</li>
-   
-</ul>
+<app-titulo [title]='title'></app-titulo>
+
+<div *ngIf="alunoSelecionado">
+  aluno selecionado:{{alunoSelecionado}}
+  <br>
+  <button class="btn btn-success" (click)="voltar()">Voltar</button>
+</div>
+<div *ngIf="!alunoSelecionado">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">SobreNome</th>
+        <th scope="col">Idade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="alunoSelect(aluno)">
+        <th scope="row">{{aluno.id}}</th>
+        <td>{{aluno.name}}</td>
+        <td>{{aluno.secondeName}}</td>
+        <td>{{aluno.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DashBoardComponent implements OnInit {
 
   constructor() { }
-  titleDashBoard= 'DashBoard';
+  
+  public title= 'DashBoard';
 
   ngOnInit() {
   }
