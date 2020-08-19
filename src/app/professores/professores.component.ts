@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProfessoresComponent implements OnInit {
 
   constructor() { }
+  public title = "Professores";
+  public professores = ["Jesus", "Frederico", "Aline"];
 
   ngOnInit() {
   }
