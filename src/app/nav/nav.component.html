@@ -17,8 +17,19 @@
         <li class="nav-item">
           <a class="nav-link" routerLinkActive='active' routerLink="alunos">Alunos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive='active' routerLink="perfil">Perfil</a>
+      </ul>
+
+      <ul class="navbar-nav" dropdown>
+        <li class="nav-item dropdown">
+          <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
+            Menu
+          </a>
+          <div id="dropdown-basic" *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="perfil">Perfil</a>
+            <a class="dropdown-item" routerLink="dashBoard">Sair</a>
+
+          </div>
         </li>
       </ul>
     </div>
