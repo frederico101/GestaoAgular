@@ -9,9 +9,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { DashBoardComponent } from './dashBoard/dashBoard.component';
 import { NavComponent } from './nav/nav.component';
 import { TituloComponent } from './titulo/titulo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [					
+  declarations: [
     AppComponent,
     AlunosComponent,
       ProfessoresComponent,
@@ -22,7 +23,9 @@ import { TituloComponent } from './titulo/titulo.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
