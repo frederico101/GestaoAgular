@@ -64,6 +64,7 @@
           "options": {
             "browserTarget": "gestaoDeNotas:build"
           },
+          "disableHostCheck": true,
           "configurations": {
             "production": {
               "browserTarget": "gestaoDeNotas:build:production"

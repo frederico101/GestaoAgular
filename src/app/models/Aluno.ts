@@ -1,7 +1,7 @@
 export class Aluno {
     id: number;
-    name: string;
-    secondName: string;
-    age: number;
+    nome: string;
+    sobrenome: string;
+    telefone: number;
 
 }
