@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "2989f2c0-37c8-40fd-bb3a-9b4ba277ba6a",
+		"name": "Angular jpa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "alunos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nome\": \"Marta\",\n    \"sobrenome\": \"Kent\",\n    \"telefone\": \"33225555\",\n    \"alunosDisciplinas\": [\n        {\n            \"alunoId\": 1,\n            \"disciplinaId\": 2,\n            \"disciplina\": {\n                \"id\": 2,\n                \"nome\": \"Física\",\n                \"professorId\": 2,\n                \"professor\": {\n                    \"id\": 2,\n                    \"nome\": \"Roberto\",\n                    \"disciplinas\": []\n        },\n                \"alunosDisciplinas\": []\n }\n    "
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/aluno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"aluno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObterAlunoPorDisciplina",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/aluno/ByDisciplina/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"aluno",
+						"ByDisciplina",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InserirAluno",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"nome\": \"Fred\",\n    \"sobrenome\": \"Alves\",\n    \"telefone\": \"33225555\",\n    \"alunosDisciplinas\": null\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/aluno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"aluno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditarAluno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/aluno/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"aluno",
+						"8"
+					]
+				},
+				"description": "EditarAluno"
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarAluno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/aluno/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"aluno",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
