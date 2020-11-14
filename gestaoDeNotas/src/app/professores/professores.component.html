@@ -16,12 +16,12 @@
     <form [formGroup]="profForm" (submit)="profSubmit()">
       <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
-        <input type="text" class="form-control" formControlName=name>
+        <input type="text" class="form-control" formControlName=nome>
       </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Disciplina</label>
+      <!-- <div class="form-group">
+        <label for="formGroupExampleInput">Disciplina</label>
         <input type="text" class="form-control" formControlName=disciplina>
-      </div>
+      </div> -->
       <div class="form-group">
         <button class="btn-sm btn btn-outline-success" [disabled]="!profForm.valid">Enviar</button>
       </div>
@@ -37,7 +37,6 @@
           <th scope="col">Detalhes</th>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Disciplina</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
@@ -46,8 +45,7 @@
 
           <td> <button (click)="profSelect(professor)" class="btn-sm btn btn-outline-warning">Detalhe</button></td>
           <th scope="row">{{professor.id}}</th>
-          <td>{{professor.name}}</td>
-          <td>{{professor.disciplina}}</td>
+          <td>{{professor.nome}}</td>
           <td>
             <div class="btn-group">
               <button (click)="openModal(template)"  class="btn-sm btn btn-outline-primary">Alunos</button>
@@ -63,7 +61,6 @@
 
 <ng-template #template>
   <div class="modal-body">
-   o problema é aqui
   </div>
   <div class="modal-footer">
     <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef.hide()">

@@ -2,6 +2,7 @@ import { Professor } from './../models/Professor';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ProfessorService } from './professor.service';
 
 
 @Component({
@@ -17,41 +18,53 @@ export class ProfessoresComponent implements OnInit {
   public profForm: FormGroup;
   public modalRef: BsModalRef;
 
-  public professores = [
-    { id: 1, name: 'Frederico', disciplina: 'programanção' },
-    { id: 2, name: 'Aline', disciplina: 'literatura' },
-    { id: 3, name: 'Jesus', disciplina: 'biologia' }
-  ];
+  public professores: Professor[];
 
-  constructor(private fb: FormBuilder, private modalService: BsModalService) {
+  constructor(private fb: FormBuilder, private modalService: BsModalService, private professorservice: ProfessorService) {
     this.criarForm();
   }
   ngOnInit(): void {
+
+    this.carregarProfessor();
   }
-    openModal(template: TemplateRef<any>) {
+
+  carregarProfessor() {
+
+    this.professorservice.getAll().subscribe(
+
+      (professores: Professor[]) => {
+
+        this.professores = professores;
+      },
+      (error: any) => {
+
+        console.log(error);
+      }
+    );
+  }
+
+
+
+  openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-    }
+  }
 
-
-
-  criarForm(){
+  criarForm() {
     this.profForm = this.fb.group({
-      name: ['', Validators.required],
-      disciplina: ['']
+      id: [''],
+      nome: ['', Validators.required]
     });
   }
 
-   profSubmit(){
+  profSubmit() {
     console.log(this.profForm.value);
   }
-  profSelect(professor: Professor){
+  profSelect(professor: Professor) {
     this.profSelecionado = professor;
     this.profForm.patchValue(professor);
   }
-  voltar(){
+  voltar() {
     this.profSelecionado = null;
   }
-
-
 
 }

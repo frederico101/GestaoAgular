@@ -59,6 +59,7 @@ export class AlunosComponent implements OnInit {
 
   alunoSubmit(): void {
     this.salvarAluno(this.alunoForm.value);
+    this.carregarAlunos();
     console.log(this.alunoForm.value);
   }
 
